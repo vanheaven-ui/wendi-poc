@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wendi Foundation POC: Donor, Beneficiary & Reconciliation Platform
 
-## Getting Started
+This project is a **Proof of Concept (POC)** for a web platform designed to assist the **Wendi Foundation** in managing donors, beneficiaries, and tracking donations, with a focus on **reconciliation** and **role-based access**. It demonstrates key functionalities that would be part of a larger NGO management system.
 
-First, run the development server:
+---
+
+## 🚀 Live Demo
+
+👉 [Try the application](https://wendi-poc.vercel.app/)
+
+---
+
+## 🧭 Project Overview
+
+This application simulates core features of the proposed Wendi Foundation platform, including:
+
+- **Donor Management**: Registration and listing of donors.
+- **Beneficiary Profiles**: Registration and listing of beneficiaries.
+- **Donation Tracking**: Recording donations and linking them to specific donors and beneficiaries.
+- **Offline Capability**: Uses `localStorage` for data persistence, simulating offline usage.
+- **Voice Input Simulation**: Demonstrates a concept for voice-based data entry.
+- **Role-Based Dashboard Simulation**: Toggle between:
+  - **Donor View** (forms for input)
+  - **Admin View** (lists, daily summary, transaction history)
+- **Daily Reconciliation**: Displays a summary ("business picture") of daily transactions.
+- **Transaction History**: Log of all donation records.
+
+---
+
+## 🛠 Tech Stack
+
+| Category     | Tech            |
+|--------------|-----------------|
+| Frontend     | [Next.js](https://nextjs.org/) (React) |
+| Styling      | [Tailwind CSS](https://tailwindcss.com/) |
+| Language     | TypeScript      |
+| Data Storage | `localStorage` (simulating backend services) |
+
+---
+
+## 🧪 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js (LTS recommended)
+- npm or Yarn
+
+### 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone [Your GitHub Repository URL]
+cd wendi-poc-nextjs
+
+# Install dependencies
+npm install
+# OR
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Once the server is running, open your browser and navigate to:
+http://localhost:3000
+Your app should now be live locally!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
+```
+src/
+├── app/
+│   ├── page.tsx                         # Main entry point; controls layout and view logic
+│   ├── globals.css                      # Global Tailwind CSS styles
+│   └── components/
+│       ├── MessageBox.tsx                  # Reusable message display component
+│       ├── VoiceInputButton.tsx           # Simulates voice command input
+│       ├── DonorRegistrationForm.tsx      # Form for registering donors
+│       ├── BeneficiaryRegistrationForm.tsx# Form for registering beneficiaries
+│       ├── DonationEntryForm.tsx          # Record and link donations
+│       ├── DailySummaryDisplay.tsx        # Shows daily reconciliation summary
+│       ├── RegisteredDonorsList.tsx       # List of registered donors
+│       ├── RegisteredBeneficiariesList.tsx# List of registered beneficiaries
+│       └── TransactionHistoryList.tsx     # Full donation transaction log
+├── tailwind.config.ts                  # Tailwind CSS configuration
+├── postcss.config.js                   # PostCSS setup for Tailwind
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔮 Future Enhancements
+The Proof of Concept lays the groundwork for several production-grade features:
 
-## Learn More
+- 🔐 Authentication & Authorization
+Integrate secure user login with role-based access (admin, donor, etc.).
+- 📊 Advanced Reporting & Analytics
+Generate charts, reports, and filters for donations and beneficiary activity.
+- 🌍 Multi-language Support
+Add internationalization (i18n) for accessibility across regions.
+- 🧠 Real Voice Recognition
+Use Web Speech API or external services for real-time voice input.
+- 🔌 Backend Integration
+Connect to a real backend using Laravel, Django, or Node.js.
+- 🧾 Database Support
+Replace localStorage with MySQL, PostgreSQL, or Firebase for persistence.
+- 💳 Payment Gateway Integration
+Integrate with services like Stripe or PayPal to accept real donations.
 
-To learn more about Next.js, take a look at the following resources:
+## 🙏 Thank You
+Thank you for reviewing this Proof of Concept for the Wendi Foundation platform!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you have suggestions, feedback, or ideas, feel free to fork the repo, open an issue, or submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Together, we can build tools that empower impactful giving. 💚
